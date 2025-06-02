@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="false">
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/unknown/lombok-unknown.jar" />
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/unknown/lombok-unknown.jar" />
         </processorPath>
         <module name="ms_catalogo" />
       </profile>
@@ -20,11 +21,25 @@
         <module name="ms-registry-server" />
         <module name="ms-gateway-service" />
       </profile>
+      <profile name="Annotation profile for inventario" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.38/lombok-1.18.38.jar" />
+        </processorPath>
+        <module name="inventario" />
+      </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="ms-venta-service" target="17" />
+      <module name="ms_cliente_service" target="17" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="auth-service" options="-parameters" />
+      <module name="inventario" options="-parameters" />
       <module name="ms-config-server" options="-parameters" />
       <module name="ms-gateway-service" options="-parameters" />
       <module name="ms-registry-server" options="-parameters" />
